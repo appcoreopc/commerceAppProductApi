@@ -1,44 +1,28 @@
 import express, { Request, Response }  from 'express';
 import { ProductController } from './controllers/product.controller';
+import { CategoryController } from './controllers/category.controller';
 import * as bodyParser from "body-parser";
 import { ApolloServer, gql } from 'apollo-server-express';
 import { ProductDao } from './models/ProductDao';
 import { DataFactory }  from './models/DataFactory';
 import { Config } from './config';
 import { MongoClient, Db } from 'mongodb';
+import { CategoryDao } from './models/CategoryDao';
 
 const app: express.Application = express();
 const port: number = 3000;
-
-const products = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-
-const books = [
-  {
-    title: 'Harry Potter and the Chamber of Secrets',
-    author: 'J.K. Rowling',
-  },
-  {
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-  },
-];
-
-
 const typeDefs = gql`
 
 # This "Book" type can be used in other type declarations.
 type Book {
   title: String
   author: String
+}
+
+type Category {
+  id : String
+  name : String, 
+  description : String
 }
 
 type Product {
@@ -56,7 +40,8 @@ type Product {
 
 type Query {
   products : [Product], 
-  books : [Book]
+  books : [Book],
+  categories : [Category]
 }
 `;
 
@@ -66,16 +51,19 @@ const client = new MongoClient(Config.url);
 const dbName = Config.databaseId;   
 let db : Db;
 let photoProvider : ProductDao;
+let categoryProvider : CategoryDao;
 
 client.connect(function(err : any) {
   console.log("Connected successfully to db server-MAIN");
   db = client.db(dbName);
   photoProvider = new ProductDao(db, Config.photoCollection);  
+  categoryProvider = new CategoryDao(db, Config.categoryCollection);
 });
 
 const resolvers = {    Query: {  
   products : async () => await photoProvider.getProducts(),    
   books : async () => await DataFactory.getProductCollection().then(a => a.getProducts()),
+  categories : async () => await categoryProvider.getAllCategory(), 
  },
 };  
 
@@ -101,6 +89,8 @@ app.get('/', async (req: Request, res: Response) => {
 });
 
 app.use('/product', ProductController);
+
+app.use('/category', CategoryController);
 
 app.listen(process.env.PORT||3000, () => {
   console.log(`Listening at http://localhost:${port}/${server.graphqlPath}`);

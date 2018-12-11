@@ -10,6 +10,7 @@ export const Config = {
     photoCollection : 'photos',
     sysadminCollection : 'sysadmin',
     productCollection : 'products',
+    categoryCollection : 'categories',
     azureStoreConnectionString : 'DefaultEndpointsProtocol=https;AccountName=meetroomstorage;AccountKey=1pbeX5cw5UWRCd5WtH24wgyioeIAGCibJenDkx06hmcbAMHzE9nPR/iLOv8Acf3M055d6vlLB+GeK5ZprgpfNQ==;EndpointSuffix=core.windows.net'
     //azureStoreConnectionString : 'AccountEndpoint=https://localhost:8081/;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw=='
 }

@@ -8,7 +8,7 @@ export interface IPhotoInfo {
 
 export class ProductDao { 
     
-    collectionId : string;
+    collectionId : string;    
     database : any = null;
     container : any = null;
     clientDb : Db;
@@ -68,45 +68,5 @@ export class ProductDao {
         let result = await collection.find({}).toArray();
         console.log(result);
         return result;     
-    }
-
-    // Todo : refactor into another class //
-    async getProductCategory(category : string ) {           
-        let self = this;          
-        const collection = self.clientDb.collection(self.collectionId);             
-        var result = await collection.find({category : category}).toArray();        
-        return result;     
-    }
-
-    // Todo : refactor into another class //
-    async getAllCategory() {           
-        let self = this;          
-        const collection = self.clientDb.collection(self.collectionId);             
-        var result = await collection.find().toArray();        
-        return result;     
-    }
-
-    async getPhoto(photoId : string ) {          
-        let self = this;          
-        const collection = self.clientDb.collection(self.collectionId);             
-        var result = await collection.find({id : photoId}).toArray();        
-        return result;     
-    }
-    
-    async insertPhotoInfo(photoJsonData : IPhotoInfo) {
-        
-        let self = this;          
-                
-        const collection = self.clientDb.collection(self.collectionId);   
-            
-        let result =  await collection.insertMany([            
-        {
-                    'username' : photoJsonData.username, 
-                    'url' : photoJsonData.url, 
-                    'description' : photoJsonData.description
-        }
-       ]); 
-
-       return result;         
     }
 }
