@@ -20,7 +20,7 @@ const router: Router = Router();
 var multerUploader = upload.single('image');
 
 client.connect(function(err : any) {
-  console.log("Connected successfully to server");
+  console.log("Connected successfully to db server");
   db = client.db(dbName);
   photoProvider = new ProductDao(db, Config.photoCollection);  
 });
@@ -31,7 +31,7 @@ router.post('/',  async (req: Request, res: Response) => {
     
     if (!err) {
       let objectJson : any = res.json();
-  
+      
       
       console.log(req.file);  
       let fname = req.file.filename; 
@@ -53,27 +53,23 @@ router.post('/',  async (req: Request, res: Response) => {
       console.log(err);
     }
   });
-
+  
   res.send("product uploaded.");
 })
 
-// Get Product id  
 router.get('/:id', async (req: Request, res: Response) => {
   let { username } = req.params;
   console.log('getuser ' + username);
-  let result = await photoProvider.getUserPhoto(username);
-  console.log('myresult', result);
-  //Greet the given name
+  let result = await photoProvider.getProductId(username);
   res.send(result);
 });
 
 
-// get product category //
-router.get('/:category/:id', async (req: Request, res: Response) => {
- 
+router.get('/:category/:id', async (req: Request, res: Response) => {  
   let { username } = req.params;
+  photoProvider.insertFake();
   console.log('getuser ' + username);
-  let result = await photoProvider.getUserPhoto(username);
+  let result = await photoProvider.getProductId(username);
   console.log('myresult', result);
   //Greet the given name
   res.send(result);

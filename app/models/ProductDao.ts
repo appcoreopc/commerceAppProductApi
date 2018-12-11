@@ -19,20 +19,6 @@ export class ProductDao {
         this.collectionId = collectionId;    
     }    
 
-    async getUserPhoto(username : string) { 
-        
-        let self = this;        
-        return new Promise(function(resolve, reject) {      
-            
-            const collection = self.clientDb.collection(self.collectionId); 
-            collection.find({username: username}).toArray(function(err: any, docs : any) {
-                console.log('sharing result');
-                console.log(docs);
-                resolve(docs);
-            });
-        });      
-    };
-    
     async insertFake() { 
         
         let self = this;  
@@ -68,10 +54,19 @@ export class ProductDao {
         });
     }
     
-    async getProductId(productId : string ) {           
-        let self = this;          
-        const collection = self.clientDb.collection(self.collectionId);             
-        var result = await collection.find({id : productId}).toArray();        
+    async getProductId(productId : string ) {  
+        let self = this;      
+        const collection = self.clientDb.collection(self.collectionId); 
+        console.log(self.collectionId);
+        let result = await collection.find({id : productId}).toArray();
+        return result;     
+    }
+
+    async getProducts() {          
+        let self = this;      
+        const collection = self.clientDb.collection(self.collectionId);         
+        let result = await collection.find({}).toArray();
+        console.log(result);
         return result;     
     }
 
