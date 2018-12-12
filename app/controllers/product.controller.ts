@@ -35,9 +35,7 @@ router.post('/',  async (req: Request, res: Response) => {
       console.log(req.file);  
       let fname = req.file.filename; 
       let path = req.file.destination;
-      
-      //console.log(req.body);
-      
+            
       if (req.body.username && req.body.description)
       {      
         const photoInfo = { 
@@ -59,6 +57,13 @@ router.get('/:id', async (req: Request, res: Response) => {
   let { id } = req.params;
   console.log('product id ' + id);
   let result = await photoProvider.getProductId(id);
+  res.send(result);
+});
+
+router.get('/', async (req: Request, res: Response) => {
+  let { id } = req.params;
+  console.log('product id ' + id);
+  let result = await photoProvider.getProducts();
   res.send(result);
 });
 

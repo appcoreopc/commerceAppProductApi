@@ -38,10 +38,19 @@ type Product {
   tag : String  
 }
 
+type RelatedProduct { 
+  id : String, 
+  uri : String, 
+  imageUri : String,
+  description : String
+  rating : Float
+}
+
 type Query {
   products : [Product], 
   books : [Book],
-  categories : [Category]
+  categories : [Category],
+  relatedProducts : [RelatedProduct]
 }
 `;
 
@@ -50,18 +59,18 @@ const client = new MongoClient(Config.url);
 // Database Name
 const dbName = Config.databaseId;   
 let db : Db;
-let photoProvider : ProductDao;
+let productProvider : ProductDao;
 let categoryProvider : CategoryDao;
 
 client.connect(function(err : any) {
   console.log("Connected successfully to db server-MAIN");
   db = client.db(dbName);
-  photoProvider = new ProductDao(db, Config.photoCollection);  
+  productProvider = new ProductDao(db, Config.photoCollection);  
   categoryProvider = new CategoryDao(db, Config.categoryCollection);
 });
 
 const resolvers = {    Query: {  
-  products : async () => await photoProvider.getProducts(),    
+  products : async () => await productProvider.getProducts(),    
   books : async () => await DataFactory.getProductCollection().then(a => a.getProducts()),
   categories : async () => await categoryProvider.getAllCategory(), 
  },
@@ -86,6 +95,15 @@ app.use(bodyParser.urlencoded({
 app.get('/', async (req: Request, res: Response) => { 
   let current = new Date();
   res.send("hello...." + current.getTime());
+
+
+  productProvider.insertFake();
+
+
+
+
+
+
 });
 
 app.use('/product', ProductController);
