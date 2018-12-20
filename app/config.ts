@@ -1,5 +1,5 @@
 export const Config = {
-    url  : 'mongodb://192.168.99.100:27017',
+    url : 'mongodb://localhost:27017',
     //endpoint : process.env.HOST || "https://meetroomdatabase.documents.azure.com:443/",
     endpoint : process.env.HOST || "https://meetroomdatabase.documents.azure.com:443/",
     //masterKey : process.env.AUTH_KEY || "BkMkhVWr1gUOOvrXcTN50mnB4wmSEEJd1I4hqqyctL9pMXpMgZDqH87aRjlJsBjVRXOr3KQlzTfqCBe77ftnRA==",

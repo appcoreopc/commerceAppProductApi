@@ -35,8 +35,7 @@ export class ProductDao {
                     'category' : '1'
 
                 },
-                {
-                    
+                {                    
                     'id' : '456', 
                     'name' : 'product2', 
                     'description' : 'product2',
@@ -57,6 +56,126 @@ export class ProductDao {
                     'id' : '1234', 
                     'name' : 'product4', 
                     'description' : 'product4',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '12345', 
+                    'name' : 'product5', 
+                    'description' : 'product5',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product6', 
+                    'description' : 'product6',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product7', 
+                    'description' : 'product7',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product8', 
+                    'description' : 'product8',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product9', 
+                    'description' : 'product9',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product10', 
+                    'description' : 'product10',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product11', 
+                    'description' : 'product11',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product12', 
+                    'description' : 'product12',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product13', 
+                    'description' : 'product13',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product14', 
+                    'description' : 'product14',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product15', 
+                    'description' : 'product15',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product16', 
+                    'description' : 'product16',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product17', 
+                    'description' : 'product18',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product19', 
+                    'description' : 'product19',
+                    'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
+                    'category' : '1'
+                },
+                {
+                    'id' : '1234', 
+                    'name' : 'product20', 
+                    'description' : 'product20',
                     'imgUri': 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
                     'productUri' : 'https://cdn.pixabay.com/photo/2015/12/09/01/02/colorful-abstract-background-1084082_960_720.jpg',
                     'category' : '1'
